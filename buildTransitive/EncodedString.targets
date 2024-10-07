@@ -1,0 +1,21 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <EncodedStringContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\EncodedString\**\*.*</EncodedStringContentFilesPath>
+  </PropertyGroup>
+
+  <Target Name="CopyEncodedStringAssets" BeforeTargets="BeforeBuild">
+    <ItemGroup>
+      <EncodedStringContentFiles Include="$(EncodedStringContentFilesPath)" />
+    </ItemGroup>
+    <Message Text="Copying EncodedString files: $(EncodedStringContentFilesPath) - #@(EncodedStringContentFiles->Count()) files" Importance="high" />
+    <Copy SourceFiles="@(EncodedStringContentFiles)" DestinationFiles="@(EncodedStringContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\EncodedString\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+
+  <Target Name="ClearEncodedStringAssets" BeforeTargets="Clean">
+    <ItemGroup>
+      <EncodedStringDir Include="$(MSBuildProjectDirectory)\App_Plugins\EncodedString\" />
+    </ItemGroup>
+    <Message Text="Clear old EncodedString data" Importance="high" />
+    <RemoveDir Directories="@(EncodedStringDir)" />
+  </Target>
+</Project>

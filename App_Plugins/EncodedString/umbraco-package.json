@@ -1,0 +1,22 @@
+{
+  "$schema": "../../umbraco-package-schema.json",
+  "id": "EncodedString",
+  "name": "EncodedString",
+  "version": "0.1.0",
+  "allowPackageTelemetry": true,
+  "extensions": [
+    {
+      "type": "propertyEditorUi",
+      "alias": "EncodedString",
+      "name": "EncodedString",
+      "element": "/App_Plugins/EncodedString/dist/stringEnCoding.js",
+      "elementName": "string-encoding-property-editor-ui",
+      "meta": {
+        "label": "StringEncoding",
+        "icon": "icon-list",
+        "group": "common",
+        "propertyEditorSchemaAlias": "Umbraco.Plain.String"
+      }
+    }
+  ]
+}
