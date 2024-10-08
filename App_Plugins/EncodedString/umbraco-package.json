@@ -9,10 +9,10 @@
       "type": "propertyEditorUi",
       "alias": "EncodedString",
       "name": "EncodedString",
-      "element": "/App_Plugins/EncodedString/dist/stringEnCoding.js",
+      "element": "/App_Plugins/EncodedString/dist/EncodedString.js",
       "elementName": "string-encoding-property-editor-ui",
       "meta": {
-        "label": "StringEncoding",
+        "label": "EncodedString",
         "icon": "icon-list",
         "group": "common",
         "propertyEditorSchemaAlias": "Umbraco.Plain.String"
